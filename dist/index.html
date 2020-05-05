@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Totally Real Site</title><link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <input type="text" id="team-input" placeholder="Team">
+    <button onclick=fetch()>Get Roster</button>
+    <div id="players"></div>
+    <script id="player-template"
+              type="text/x-handlebars-template">
+              {{#each players}}
+                <div class="player">
+                    <p class="name" id="{{firstName}} {{lastName}}">{{firstName}} {{lastName}}</p>
+                    <p class="jersey">{{jersey}}</p>
+                    <div class="MM" onclick="CLick(this)">
+                        <img class="image" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="SetDef(this)" >
+                    </div>
+                    <p class="pos">{{pos}}</p>
+                </div>
+            {{/each}}
+    </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="./handlebars/dist/handlebars.js"></script>   
+<script src="./jquery/dist/jquery.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,47 @@
+#players{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "p p p";
+}
+
+.player{
+    grid-area: "p";
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5%;
+    background-color: gainsboro;
+    box-shadow: 1px 1px 3px #0a1612;
+    display: grid;
+    grid-template-rows: 1fr 1fr 6fr 1fr;
+    grid-template-areas: 
+    "n"
+    "j"
+    "i"
+    "p";
+    align-items: center;
+    justify-items: center;
+    color: black;
+}
+.name{
+    grid-area: "n";
+    justify-items: center;
+}
+.jersey{
+    grid-area: "j";
+    justify-items: center;
+}
+.image{
+    grid-area: "i";
+    justify-items: center;
+    height: 200px;
+    width: 250px;
+}
+.pos{
+    grid-area: "p";
+    justify-items: center;
+}
+
+.MM{
+    color: black;
+    justify-items: center;
+}

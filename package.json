@@ -1,0 +1,27 @@
+{
+  "name": "my-roster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test-silent": "jest --runInBand || exit 0",
+    "tests": "tests --runInBand"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "got": "^9.6.0",
+    "jest": "^23.4.2",
+    "jest-expect-message": "github:Elevationacademy/jest-expect-message",
+    "jest-json-reporter": "^1.2.2",
+    "jest-test-runner": "git+https://github.com/Elevationacademy/jest-test-runner.git",
+    "jest-transform-stub": "^1.0.0",
+    "jquery": "^3.5.0",
+    "lodash": "latest",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.4",
+    "urllib": "^2.34.2"
+  }
+}
