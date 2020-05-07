@@ -8,19 +8,19 @@ const urllib = require('urllib')
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
-dict={}
+
+dict={}//teamToIDs
+//this for generating dict{}/teamsToIDs with all teamsName:teamID based on teams.json
 request('http://data.nba.net/10s/prod/v1/2018/teams.json', function(err, res, body){
         if (err) {
             throw err; 
         }
         const Allteams= JSON.parse(body).league.standard
        // console.log(Allteams)
-        for (i of Allteams){
+        for (let i of Allteams){
             dict[i.nickname]=i.teamId
         }
     })
-
-
 
 app.get('/teams/:teamName', function (req, response) {
     let teamName = req.params.teamName
@@ -38,25 +38,17 @@ app.get('/teams/:teamName', function (req, response) {
         response.send(players)
     })
 })
+
 app.get('/playerStats/:player', function (req, response) {
     const PersonId = req.params.player
-    s = PersonId.split(/(?<=^\S+)\s/)
-    console.log(s[0],s[1]);
+    let s = PersonId.split(/(?<=^\S+)\s/)
     urllib.request(`https://nba-players.herokuapp.com/players-stats/${s[1]}/${s[0]}`, function(err, res){
         if (err) {
             throw err; 
         }
-        response.send(JSON.parse(res))
-        console.log(res)
+        response.send(res)
     })   
 })
-        
-        //const PersonI=$(this).closest("#name")
-        //s = PersonId.split(/(?<=^\S+)\s/)
-        //$("#image").attr("src","second.jpg");
-        //$(this).attr("src", `https://nba-players.herokuapp.com/players-stats/${s[1]}/${s[0]}`);
-
-
 
 class Player {
     constructor(firstName, lastName, jersey, pos, personId) {

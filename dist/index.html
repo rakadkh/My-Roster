@@ -14,8 +14,8 @@
                 <div class="player">
                     <p class="name" id="{{firstName}} {{lastName}}">{{firstName}} {{lastName}}</p>
                     <p class="jersey">{{jersey}}</p>
-                    <div class="MM" onclick="CLick(this)">
-                        <img class="image" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="SetDef(this)" >
+                    <div class="MM" onclick="CLick(this)" id="true">
+                        <img class="image" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onerror="SetDefaultImage(this)" >
                     </div>
                     <p class="pos">{{pos}}</p>
                 </div>
