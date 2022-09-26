@@ -22,6 +22,6 @@
     "lodash": "latest",
     "request": "^2.88.2",
     "request-promise": "^4.2.4",
-    "urllib": "^2.34.2"
+    "urllib": "^2.38.1"
   }
 }
